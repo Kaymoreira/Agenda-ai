@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda IA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app" class="container">
+        <header>
+            <h1>Agenda IA</h1>
+            <nav>
+                <button id="btnAgenda" class="active">Agenda</button>
+                <button id="btnChat">Chat IA</button>
+            </nav>
+        </header>
+        
+        <main>
+            <section id="agendaSection" class="active">
+                <h2>Minha Agenda</h2>
+                
+                <div class="year-view">
+                    <h3 id="currentYear">2024</h3>
+                    <div class="months-container">
+                        <!-- Meses serão gerados pelo JavaScript -->
+                    </div>
+                </div>
+
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button id="prevMonth">&lt;</button>
+                        <h3 id="currentMonth">Março 2024</h3>
+                        <button id="nextMonth">&gt;</button>
+                    </div>
+                    <div id="calendar" class="calendar"></div>
+                </div>
+                
+                <div class="events-list">
+                    <h3>Eventos</h3>
+                    <ul id="eventsList"></ul>
+                    <button id="addEventBtn">Adicionar Evento</button>
+                </div>
+                
+                <div id="eventModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3>Adicionar Evento</h3>
+                        <form id="eventForm">
+                            <div class="form-group">
+                                <label for="eventTitle">Título:</label>
+                                <input type="text" id="eventTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventDate">Data:</label>
+                                <input type="date" id="eventDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventTime">Hora:</label>
+                                <input type="time" id="eventTime" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventDescription">Descrição:</label>
+                                <textarea id="eventDescription"></textarea>
+                            </div>
+                            <button type="submit">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div id="monthModal" class="modal">
+                    <div class="modal-content month-modal-content">
+                        <span class="close">&times;</span>
+                        <div class="month-detail-container">
+                            <h3 id="monthDetailTitle">Mês de Março</h3>
+                            <div id="monthDetailCalendar" class="calendar"></div>
+                            <div class="month-events">
+                                <h4>Eventos do Mês</h4>
+                                <ul id="monthEventsList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="chatSection">
+                <h2>Chat com IA</h2>
+                <div class="chat-container">
+                    <div id="chatMessages" class="chat-messages"></div>
+                    <div class="chat-input">
+                        <input type="text" id="userMessage" placeholder="Digite sua mensagem...">
+                        <button id="sendMessage">Enviar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html> 
